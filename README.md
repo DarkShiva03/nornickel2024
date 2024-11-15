@@ -6,6 +6,24 @@ Tasks:
 
 In this task, we aim to optimize ore extraction from pulp by finding the most efficient ranges under given constraints. Participants will have to consider various features, their boundaries, and the width of the ranges. Using algorithms and models, teams will be able to improve the efficiency of the enrichment process, which will lead to significant economic and environmental benefits.
 
+Solution:
+Changes:
+
+- Using different optimization algorithms: Added method parameter to optimize_ore_extraction function, which allows to choose optimization algorithm from minimize, differential_evolution, basinhopping, dual_annealing. In main function, optimization with each of the methods is run to compare results.
+- Using machine learning methods: Added predict_optimal_ranges and main functions to train a machine learning model (linear regression in this case) and predict optimal ranges based on new data.
+- Accounting for process dynamics: Added a plan to account for process dynamics in the comments:
+- Generate new pulp data with changed characteristics.
+- Update the machine learning model using the new data.
+- Predict new optimal ranges using the updated model.
+
+Important:
+
+- This code is still a basic example and requires further development to solve a real ore extraction optimization problem.
+- It is necessary to take into account the specifics of a particular beneficiation process and use real pulp data and constraints.
+ - The optimization results must be verified and validated using real experiments.
+- To solve problems with process dynamics, it is necessary to develop algorithms for adapting the machine learning model to changes in pulp characteristics.
+- To create a full-fledged enrichment process optimization system, it will be necessary to develop a user interface, integrate with real data collection and enrichment process management systems, as well as continuous monitoring and analysis of the results.
+
 2. Dirty Deeds
 
 Dirty camera lenses can seriously affect the performance of computer vision algorithms. In this task, it is necessary to develop a method for determining the degree of frame contamination to ensure reliable operation of cameras in production, as well as in robot couriers and autonomous vehicles. Solving this problem will help improve the accuracy and efficiency of various systems that depend on visual data.
