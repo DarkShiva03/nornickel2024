@@ -28,6 +28,22 @@ Important:
 
 Dirty camera lenses can seriously affect the performance of computer vision algorithms. In this task, it is necessary to develop a method for determining the degree of frame contamination to ensure reliable operation of cameras in production, as well as in robot couriers and autonomous vehicles. Solving this problem will help improve the accuracy and efficiency of various systems that depend on visual data.
 
+Changes:
+
+• get_pollution_level (Python) and getPollutionLevel (Arduino): Now returns an additional mask (pixel array) with the highlighted pollution areas.
+• Python: 
+* Use cv2.bitwise_or to combine the current frame and the pollution mask.
+* Display the result using cv2.imshow.
+• Arduino:
+* Create a pollutionMask to store the highlighted pollution pixels.
+* Use the memset function to initialize the mask to zeros.
+* In the for loop in the getPollutionLevel function, when a pollution pixel is detected, the value in the mask is set to 255.
+* Draw a frame to the display using the drawBitmap function and then draw black pixels in those places where the value in the pollutionMask is 255.
+
+Result:
+
+Now the current frame will be displayed on the screen with the highlighted pollution areas in black.
+
 3. Multimodal RAG Models
 
 The task is to create an efficient pipeline for automatic document search and indexing using multimodal RAG and the ColPali model. Participants will have to develop a system that can process various data formats, providing fast and accurate indexing. This solution will significantly simplify access to information and increase the productivity of working with documents in various fields.
